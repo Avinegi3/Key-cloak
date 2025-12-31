@@ -5,6 +5,7 @@ import useAuth from "./hooks/useAuth";
 
 function App() {
   const [isLogin, token] = useAuth();
+  console.log(">>>>",token)
   return isLogin ? <Protected token={token} /> : <Public />;
 }
 

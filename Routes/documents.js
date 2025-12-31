@@ -18,7 +18,7 @@ let data = {
 
 const getDocuments = async (req, res) => {
   try {
-    const email = req.user;
+    const email = req.user.email;
 
     res.status(200).send(data[email]);
   } catch (err) {
@@ -27,4 +27,7 @@ const getDocuments = async (req, res) => {
 };
 
 router.get("/", getDocuments);
+
+router.post("/", getDocuments);
+
 export default router;
